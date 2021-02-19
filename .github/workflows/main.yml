@@ -35,6 +35,9 @@ jobs:
           git add marcap
           git commit --allow-empty -m "update marcap"
           git push 
+          
+      - name: Set up Python
+        uses: actions/setup-python@v2
 
       - name: run-notebook
         uses: yaananth/run-notebook@v1
