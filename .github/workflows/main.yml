@@ -28,7 +28,7 @@ jobs:
           submodules: true
           
       - name: update marcap submodule
-      - run: |
+        run: |
           git submodule update --remote marcap
           git config user.name github-actions
           git config user.email github-actions@github.com
