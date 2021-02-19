@@ -45,5 +45,3 @@ jobs:
           git add -u 
           git commit -m "update html files"
           git push 
-        continue-on-error: 
-          
