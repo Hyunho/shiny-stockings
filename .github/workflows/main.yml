@@ -35,17 +35,13 @@ jobs:
           git add marcap
           git commit --allow-empty -m "update marcap"
           git push 
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
 
-      - name: install python requirements
-        run: pip install --no-cache-dir -r requirements.txt
-        
+      - name: run-notebook
+        uses: yaananth/run-notebook@v1
+
       - name: render nodebook file to html
         run: | 
-          jupyter nbconvert --to html NOTEBOOK-NAME.ipynb
+          jupyter nbconvert --to html chun.ipynb
           git add -u 
           git commit -m "update html files"
           git push 
