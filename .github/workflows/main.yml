@@ -24,6 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          submodules: true
 
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
+      - name: update marcap submodules
+        run: git submodule update --remote marcap
